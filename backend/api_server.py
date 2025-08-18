@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 from typing import List, Optional
 from pinecone import Pinecone
 from dotenv import load_dotenv
-from .gemini_helper import (
+from gemini_helper import (
     generate_dense_embedding,
     generate_summary,
     classify_query_type,
@@ -344,4 +344,5 @@ def ensure_db_file():
 
 # Call it before using DB
 ensure_db_file()
+
 
