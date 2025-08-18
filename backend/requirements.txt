@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-pinecone=7.3.0
+pinecone==7.3.0
 google-generativeai
 sqlite-utils
 python-dotenv
