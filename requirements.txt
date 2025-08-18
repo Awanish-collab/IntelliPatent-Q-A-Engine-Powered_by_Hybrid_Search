@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pinecone-client
+google-generativeai
+sqlite-utils
+python-dotenv
+streamlit
+google-genai
+langchain
