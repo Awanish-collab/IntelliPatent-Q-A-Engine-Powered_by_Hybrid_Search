@@ -14,12 +14,16 @@ from .gemini_helper import (
     generation_config
 )
 from .pinecone_helper import generate_sparse_embedding
+import requests
 
 load_dotenv()
 
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY1")
 PINECONE_INDEX_NAME = os.getenv("PINECONE_INDEX_NAME", "intellipatent-hybrid-search-index")
 SQLITE_DB_PATH = os.getenv("SQLITE_DB_PATH", "patent_data.db")
+
+DB_PATH = os.getenv("SQLITE_DB_PATH", "patent_data.db")
+DB_URL = os.getenv("SQLITE_DB_URL")
 
 app = FastAPI(title="IntelliPatent Q&A Engine API", version="1.4.3")
 
@@ -319,10 +323,11 @@ async def root():
     """Root endpoint"""
     return {"message": "IntelliPatent Q&A Engine API", "version": "1.4.3", "status": "running"}
 
-import requests
 
-DB_PATH = os.getenv("SQLITE_DB_PATH", "patent_data.db")
-DB_URL = os.getenv("SQLITE_DB_URL")
+@app.get("/healthz")
+def health_check():
+    return {"status": "ok"}
+
 
 def ensure_db_file():
     if not os.path.exists(DB_PATH):
