@@ -13,7 +13,7 @@ from .gemini_helper import (
     gemini_model,
     generation_config
 )
-from .pinecone_helper import generate_sparse_embedding
+from pinecone_helper import generate_sparse_embedding
 import requests
 
 load_dotenv()
@@ -344,3 +344,4 @@ def ensure_db_file():
 
 # Call it before using DB
 ensure_db_file()
+
