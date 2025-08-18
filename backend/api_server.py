@@ -318,3 +318,24 @@ async def health_check():
 async def root():
     """Root endpoint"""
     return {"message": "IntelliPatent Q&A Engine API", "version": "1.4.3", "status": "running"}
+
+import requests
+
+DB_PATH = os.getenv("SQLITE_DB_PATH", "patent_data.db")
+DB_URL = os.getenv("SQLITE_DB_URL")
+
+def ensure_db_file():
+    if not os.path.exists(DB_PATH):
+        if not DB_URL:
+            raise RuntimeError("Database not found locally and SQLITE_DB_URL not set")
+        print(f"📥 Downloading DB from {DB_URL}...")
+        response = requests.get(DB_URL)
+        response.raise_for_status()
+        with open(DB_PATH, "wb") as f:
+            f.write(response.content)
+        print("✅ Database downloaded and saved locally.")
+    else:
+        print("✔ Database already exists locally, skipping download.")
+
+# Call it before using DB
+ensure_db_file()
