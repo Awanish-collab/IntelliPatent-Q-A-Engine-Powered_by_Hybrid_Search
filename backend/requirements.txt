@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-pinecone-client
+pinecone
 google-generativeai
 sqlite-utils
 python-dotenv
