@@ -392,15 +392,8 @@ On Render, choose **Docker** runtime and they’ll use this Dockerfile.
 
 ## 🔗 Live URLs (fill in)
 
-* **Backend (Render):**
-  `https://intellipatent-q-a-engine-powered-by.onrender.com`
-
-* **Frontend (HF Space repo):**
-  `https://huggingface.co/spaces/<your-username>/<space-name>`
-
-* **Frontend (Live App):**
-  `https://<your-username>-<space-name>.hf.space`
+* **Live App:**
+  `https://awanish17-intellipatent-ui.hf.space`
 
 ---
 
-If you want, I can also generate a short **project demo script** (bullet points + sample questions) to showcase hybrid vs generic vs irrelevant queries.
