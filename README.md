@@ -194,34 +194,6 @@ streamlit run app.py
 
 ---
 
-## 🛠️ Troubleshooting
-
-**1) Pinecone 400: “Required parameter 'input\_type'… for model 'pinecone-sparse-english-v0'”**
-Provide `input_type="passage"` (for docs) or `"query"` (for user queries).
-
-**2) Pinecone 400: “Found unexpected data in column `sparse_values` …”**
-Your sparse payload must be a dict:
-
-```python
-sparse = {"indices": [12, 42, ...], "values": [0.2, 0.1, ...]}
-index.upsert([{"id": id, "values": dense, "sparse_values": sparse, "metadata": {...}}])
-```
-
-**3) “Vector dimension 768 does not match 1536”**
-
-* Your Pinecone index must be created with `dimension=1536`
-* Or set Gemini embedding `output_dimensionality=1536` (your code already does)
-
-**4) Free Render cold starts**
-
-* Expect a few extra seconds; DB will download if missing.
-
-**5) CORS**
-
-* If your browser can’t reach the API, ensure CORS is allowed on the backend (FastAPI CORSMiddleware), or that HF Space calls the correct `API_URL`.
-
----
-
 ## 🧾 Requirements
 
 If you’re keeping one file (works fine):
