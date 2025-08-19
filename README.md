@@ -1,5 +1,3 @@
----
-
 # IntelliPatent Q\&A Engine (Hybrid Search + Gemini)
 
 A production-ready Patent Q\&A system that combines:
