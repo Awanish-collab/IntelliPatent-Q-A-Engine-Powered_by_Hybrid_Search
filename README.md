@@ -68,14 +68,30 @@ Gemini (classify/summarize)   Pinecone (query vectors)
 ## 🗂️ Repo Structure (example)
 
 ```
-.
-├── api_server.py            # FastAPI app (Render)
-├── gemini_helper.py         # Gemini: embeddings, classify, generic answers, summaries
-├── pinecone_helper.py       # (Optional) Sparse embedding wrapper
-├── app.py                   # Streamlit UI (HF Spaces)
-├── requirements.txt         # (single-file works; see split option below)
-├── .env                     # Local dev env vars (never commit real keys)
-└── (optional) Dockerfile
+IntelliPatent-QA-Engine with Hybrid Search/
+│
+├── backend/                       # FastAPI Backend (Vector Search API)
+│   ├── api_server.py               # FastAPI Server
+│   ├── data_loader.py              # Data Ingestion (Pinecone + SQLite3)
+│   ├── pinecone_helper.py          # Pinecone Index Helpers (Hybrid Search)
+│   ├── sqlite_helper.py            # SQLite3 DB Functions
+│   ├── groq_helper.py              # Summarization with Groq API
+│   ├── Dockerfile                  # Backend Dockerfile
+│   ├── requirements.txt            # Backend Python Dependencies
+│
+├── frontend/                      # Streamlit UI
+│   ├── app.py                      # Streamlit Frontend Application
+│   ├── Dockerfile                  # Frontend Dockerfile (if needed)
+│   ├── requirements.txt            # Frontend Python Dependencies
+│
+├── patent_jsons/                   # Patent Data JSONs
+│
+├── postman/                        # Postman Collection for API Testing
+│
+├── .env.example                    # Environment Variables Example
+├── docker-compose.yml              # Orchestration for Backend + Frontend
+├── README.md                       # Project Documentation
+
 ```
 
 ---
