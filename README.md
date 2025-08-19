@@ -71,26 +71,21 @@ Gemini (classify/summarize)   Pinecone (query vectors)
 IntelliPatent-QA-Engine with Hybrid Search/
 │
 ├── backend/                       # FastAPI Backend (Vector Search API)
-│   ├── api_server.py               # FastAPI Server
-│   ├── data_loader.py              # Data Ingestion (Pinecone + SQLite3)
-│   ├── pinecone_helper.py          # Pinecone Index Helpers (Hybrid Search)
-│   ├── sqlite_helper.py            # SQLite3 DB Functions
-│   ├── groq_helper.py              # Summarization with Groq API
-│   ├── Dockerfile                  # Backend Dockerfile
-│   ├── requirements.txt            # Backend Python Dependencies
+│   ├── api_server.py              # FastAPI Server
+│   ├── data_loader.py             # Data Ingestion (Pinecone + SQLite3)
+│   ├── pinecone_helper.py         # Pinecone Index Helpers (Hybrid Search)
+│   ├── sqlite_helper.py           # SQLite3 DB Functions
+│   ├── gemini_helper.py           # Summarization with Groq API
+│   ├── Dockerfile                 # Backend Dockerfile
+│   ├── requirements.txt           # Backend Python Dependencies
 │
 ├── frontend/                      # Streamlit UI
-│   ├── app.py                      # Streamlit Frontend Application
-│   ├── Dockerfile                  # Frontend Dockerfile (if needed)
-│   ├── requirements.txt            # Frontend Python Dependencies
+│   ├── app.py                     # Streamlit Frontend Application
+│   ├── requirements.txt           # Frontend Python Dependencies
 │
-├── patent_jsons/                   # Patent Data JSONs
-│
-├── postman/                        # Postman Collection for API Testing
-│
-├── .env.example                    # Environment Variables Example
-├── docker-compose.yml              # Orchestration for Backend + Frontend
-├── README.md                       # Project Documentation
+├── .env.example                   # Environment Variables Example
+├── docker-compose.yml             # Orchestration for Backend + Frontend
+├── README.md                      # Project Documentation
 
 ```
 
