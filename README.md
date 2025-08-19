@@ -70,12 +70,12 @@ Gemini (classify/summarize)   Pinecone (query vectors)
 ```
 IntelliPatent-QA-Engine with Hybrid Search/
 │
-├── backend/                       # FastAPI Backend (Vector Search API)
+├── backend/                       # FastAPI Backend (Hybrid Search API)
 │   ├── api_server.py              # FastAPI Server
 │   ├── data_loader.py             # Data Ingestion (Pinecone + SQLite3)
 │   ├── pinecone_helper.py         # Pinecone Index Helpers (Hybrid Search)
 │   ├── sqlite_helper.py           # SQLite3 DB Functions
-│   ├── gemini_helper.py           # Summarization with Groq API
+│   ├── gemini_helper.py           # Summarization with Gemini API
 │   ├── Dockerfile                 # Backend Dockerfile
 │   ├── requirements.txt           # Backend Python Dependencies
 │
